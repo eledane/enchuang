@@ -523,3 +523,42 @@ function enchuang_home_mission( $h_services ){
   return $new_services;
   
   }
+
+//mission's loop on homepage
+
+function enchuang_service_mission( $h_services ){
+  
+    $new_services = array();
+
+    foreach( $h_services as $new_ser ){
+      
+      $new_services[] = '<div class="col-lg-4 col-md-4 col-sm-4 services"><i class="fa ' . $new_ser['service_sec_desc_icon'] .'"></i><h3>' . $new_ser['service_sec_desc_title'] .'</h3>' . $new_ser['service_sec_desc_content'] .'</div>';
+      }
+  
+  return $new_services;
+  
+  }
+
+// service center 
+
+function enchuang_service_center( $arr ){
+ 
+  $center = array();
+  
+  foreach( $arr as $a ){
+  
+   $title = empty($a['service_third_process_link']) ? $a['service_third_process_title'] : '<a href="' . $a['service_third_process_link'] .'" target="_blank">' . $a['service_third_process_title'] . '</a>';
+
+   $center[] = '<div class="col-lg-6 col-md-6 col-sm-6"><i class="fa ' . $a['service_third_process_icon'] . '"></i><h4>' . $title . '</h4><p class="desc">' . strip_tags($a['service_third_process_content']) . '</div>'; 
+
+    }
+
+   return $center;
+  }
+  
+
+
+
+
+
+

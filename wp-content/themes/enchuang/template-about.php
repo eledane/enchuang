@@ -19,6 +19,7 @@ get_header(); ?>
 	  <?php 
    while(have_posts()): the_post();
    $header_bg = get_field('about_us_bg');
+   $left_img = get_field('about_us_left_img');
    ?> 
   
 	  <!-- start content -->	
@@ -51,13 +52,14 @@ get_header(); ?>
 		<div class="container-fluid">
 		  <div class="row">
 		    <div class="col-lg-6 col-md-6 col-sm-6" style="padding: 0;">
-		      <img src="<?php bloginfo('template_url');?>/img/about02.jpg" alt="" />
+		      <img src="<?php echo $left_img['url'];?>" alt="" />
 		    </div>
 		    <div class="col-lg-6 col-md-6 col-sm-6" style="padding: 60px;">
 			  <h2>Our Skills</h2>
 			  <div class="line"></div>
 			  <div style="height: 30px; clear: both;"></div>
 			  <div class="progress_block">								
+
 				<div class="progress_text">
 				  <p class="title">WordPress Development</p>
 				  <p class="number">60%</p>
