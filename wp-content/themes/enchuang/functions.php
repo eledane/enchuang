@@ -507,3 +507,19 @@ function enchuang_product_center_categories() {
 
   return $lists;
 }
+
+
+//mission's loop on homepage
+
+function enchuang_home_mission( $h_services ){
+  
+    $new_services = array();
+
+    foreach( $h_services as $new_ser ){
+      
+      $new_services[] = '<div class="col-lg-4 col-md-4 col-sm-4 services"><i class="fa ' . $new_ser['home_mission_content_icon'] .'"></i><h3>' . $new_ser['home_mission_content_title'] .'</h3>' . $new_ser['home_mission_content_desc'] .'</div>';
+      }
+  
+  return $new_services;
+  
+  }

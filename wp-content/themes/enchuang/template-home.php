@@ -158,7 +158,7 @@ get_header(); ?>
                 <a href="<?php the_permalink();?>"><?php pll_e('更多详情');?></a>		
 				</p> 				
 				</div>				
-              <?php endwhile; ?>
+              <?php endwhile; wp_reset_postdata(); ?>
                 				
               </div>			  
               <?php endif; ?>
@@ -183,49 +183,38 @@ get_header(); ?>
 
 		<!-- end clients -->
 	<!-- start intro -->
-	 
+	<?php
+  $h_services = get_field('home_mission_content');
+   if( $h_services ){ $missions = enchuang_home_mission($h_services); }
+   ?> 
 	<!-- end intro -->	
 		<!-- start service -->
 		<div class="block service">
 		  <div class="container">
-		    <h2 class="text-center">What can we do for you</h2>
+		    <h2 class="text-center"><?php the_field('home_mission_title'); ?></h2>
 			<div class="line center"></div>
-			<p class="subtitle text-center">Duis autem vel eum iriure.</p>			  
-		    <div class="row">
-		      <div class="col-lg-4 col-md-4 col-sm-4 services">
-		        <i class="fa fa-diamond"></i>
-				<h3>Duis autem vel</h3>
-				<p>Ut wisi enim ad minim veniam, quis nostrud <br> exerci tation ullamcorper suscipit lobortis <br> nisl uti aliquip ex ea eum consequat.</p>
-		      </div>
-		      <div class="col-lg-4 col-md-4 col-sm-4 services">
-		        <i class="fa fa-hdd-o"></i>
-				<h3>Nam liber tempor</h3>
-				<p>Ut wisi enim ad minim veniam, quis nostrud <br> exerci tation ullamcorper suscipit lobortis <br> nisl uti aliquip ex ea eum consequat.</p>
-		      </div>
-		      <div class="col-lg-4 col-md-4 col-sm-4 services">
-		        <i class="fa fa-paper-plane-o"></i>
-				<h3>Eodem modo typi</h3>
-				<p>Ut wisi enim ad minim veniam, quis nostrud <br> exerci tation ullamcorper suscipit lobortis <br> nisl uti aliquip ex ea eum consequat.</p>
-		      </div>			  
-		    </div>
-			<div style="height: 30px; clear: both;"></div>
-		    <div class="row">
-		      <div class="col-lg-4 col-md-4 col-sm-4 services">
-		        <i class="fa fa-lightbulb-o"></i>
-				<h3>Eodem modo typi</h3>
-				<p>Ut wisi enim ad minim veniam, quis nostrud <br> exerci tation ullamcorper suscipit lobortis <br> nisl uti aliquip ex ea eum consequat.</p>
-		      </div>
-		      <div class="col-lg-4 col-md-4 col-sm-4 services">
-		        <i class="fa fa-star-o"></i>
-				<h3>Duis autem vel</h3>
-				<p>Ut wisi enim ad minim veniam, quis nostrud <br> exerci tation ullamcorper suscipit lobortis <br> nisl uti aliquip ex ea eum consequat.</p>
-		      </div>
-		      <div class="col-lg-4 col-md-4 col-sm-4 services">
-		        <i class="fa fa-comment-o"></i>
-				<h3>Nam liber tempor</h3>
-				<p>Ut wisi enim ad minim veniam, quis nostrud <br> exerci tation ullamcorper suscipit lobortis <br> nisl uti aliquip ex ea eum consequat.</p>
-		      </div>			  
-		    </div>			
+			<p class="subtitle text-center"><?php the_field('home_mission_sub_title'); ?></p>			  
+
+        <?php
+        $h_services = get_field('home_mission_content');
+        if( $h_services ):  
+        $missions = enchuang_home_mission($h_services);
+        ?>
+
+        <?php
+        foreach (array_chunk($missions, 3, true) as $array):
+        ?> 
+        <div class="row">
+        <?php 
+        foreach( $array as $arr ){
+          echo $arr;
+          }
+        ?>
+        </div>
+        <div style="height: 30px; clear: both;"></div>
+        <?php endforeach; ?>
+        <?php endif; ?>
+
 		  </div>
 		</div>
 		<!-- end service -->			
