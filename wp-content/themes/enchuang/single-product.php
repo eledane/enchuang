@@ -99,11 +99,10 @@ get_header();
                     <li>
                       <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                     </li>
-                   <?php endwhile;?> 
+                   <?php endwhile; wp_reset_postdata(); ?> 
                   </ul>
                 </div>
             <?php endif;?>
-            <?php wp_reset_postdata();?>
           <?php echo enchuang_get_product_categories(); ?>
 				
 			  </aside>

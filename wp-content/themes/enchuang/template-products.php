@@ -65,8 +65,12 @@ get_header(); ?>
                           while( $all_post->have_posts() ): 
                           $all_post->the_post();
 
-                           $cs = get_the_terms($post->ID, "product_category");
-                           $item_slug = esc_html( $cs[0]->slug );
+                           $css = get_the_terms($post->ID, "product_category");
+                            foreach( $css as $cs){
+                               if( $cs->parent == 0){
+                                 $item_slug = esc_html( $cs->slug );
+                              }
+                           }
                           ?>
                         <li class="portfolio-item <?php echo $item_slug; ?>">
                             <div class="item-main">

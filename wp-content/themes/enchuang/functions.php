@@ -457,7 +457,8 @@ function enchuang_get_product_categories( $tag = 'product_category') {
    
      $categories = get_terms([
 	    'taxonomy' => $tag,
-	     'hide_empty' => false,
+	    'hide_empty' => false,
+      'parent'     => 0
 	    ]);
       
        if( $tag == 'product_category'){
@@ -491,6 +492,7 @@ function enchuang_product_center_categories() {
      $categories = get_terms([
 	    'taxonomy' => 'product_category',
 	     'hide_empty' => false,
+       'parent' => 0
 	    ]);
 
      $lists = '<div class="text-center">'. "\n";
@@ -557,7 +559,35 @@ function enchuang_service_center( $arr ){
   }
   
 
+//get product category
+function enchuang_get_product_sub_categories( $tax = 'product_category', $term_id, $tax_parent ) {
+   
+     $id = $tax_parent == 0 ? $term_id : $tax_parent;
+     $term_obj = get_term_by('id', $id, $tax);
 
+     $categories = get_terms([
+	    'taxonomy' => $tax,
+	    'hide_empty' => false,
+      'child_of' => $id,
+	    ]);
+      
+     $lists = '<div id="categories" class="widget posts_holder">'."\n";
+     $lists .= '<h5><a href="' . esc_url(get_category_link($id)) . '">' . pll__($term_obj->name). '</a></h5>'."\n";
+     $lists .= '<ul>'. "\n";
+
+  foreach( $categories  as $category) {
+
+    $lists .= '<li class="cat-item">'."\n";
+    $lists .= '<a href="' . esc_url( get_category_link( $category->term_id ) ).'">' . pll__( esc_attr( $category->name )) .'</a>' ."\n";
+    $lists .= '</li>' . "\n";
+
+   }	
+
+  $lists .= '</ul>'."\n";
+  $lists .= '</div>'."\n";
+
+  return $lists;
+}
 
 
 
