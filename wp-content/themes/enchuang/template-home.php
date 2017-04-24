@@ -40,7 +40,7 @@ get_header(); ?>
             <?php echo $slider['home_slider_slogan']; ?>
 		        </p>	
 		        <a class="btn btn-primary" href="<?php echo $slider['home_slider_link']; ?>"><?php pll_e('了解更多');?></a>
-		        <a class="btn btn-transparent" href="#"><?php pll_e('联系我们'); ?></a>
+		        <a class="btn btn-transparent" href="#" data-toggle="modal" data-target="#myModal"><?php pll_e('联系我们'); ?></a>
 		      </div>			
 		    </div>
 		  </div>		  

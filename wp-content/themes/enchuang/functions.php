@@ -66,7 +66,7 @@ function enchuang_scripts() {
 	    wp_enqueue_script( 'jqBootstrapValidation', get_template_directory_uri() . '/js/jqBootstrapValidation.js', array(), '', true );
 
 
-	    wp_enqueue_script( 'contact', get_template_directory_uri() . '/js/contact_me.js', array( 'jquery' ), '', true );
+	    //wp_enqueue_script( 'contact', get_template_directory_uri() . '/js/contact_me.js', array( 'jquery' ), '', true );
 	    wp_enqueue_script( 'custom', get_template_directory_uri() . '/js/custom.js', array('jquery'), '', true );
 
 	    // Load the html5 shiv.
@@ -437,7 +437,7 @@ class Enchuang_Header_Menu_Mobile extends Walker_Nav_Menu {
     */
 
     $form = '<form role="search" id="header-search-form" class="center-block" method="get" action="' . home_url( '/' ) . '">
-            <input id="header-search" type="text" placeholder="搜索..." autocomplete="off" style="height:150px;" value="' . get_search_query() . '" name="s">
+            <input id="header-search" type="text" placeholder="'. pll__('搜索...') . '" autocomplete="off" style="height:150px;" value="' . get_search_query() . '" name="s">
              <input type="submit" id="searchsubmit"  style="visibility: hidden" value="'. esc_attr__( 'Search' ) .'" />
           </form>';
 
@@ -449,6 +449,20 @@ class Enchuang_Header_Menu_Mobile extends Walker_Nav_Menu {
 
 //add featured image
 add_theme_support( 'post-thumbnails' );
+
+
+  // limit search results on specific post types
+  function enchuang_search_limit_post_type($query) {
+ 
+          if ($query->is_search && !is_admin() ) {
+                $query->set('post_type',array('product', 'post'));
+              }
+ 
+    return $query;
+  }
+ 
+add_filter('pre_get_posts','enchuang_search_limit_post_type');
+
 
 
 

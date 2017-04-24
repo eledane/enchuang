@@ -11,20 +11,20 @@
 * @subpackage Bright 
 * @since Bright 1.0
 */
-//$terms = get_query_var();
-$term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
-
- $header_bg = get_field('product_bg', $post->ID);
 
 get_header(); ?>
 	
  	  <!-- start content -->	
 	  <div class="content">	  
 	    <!-- start hero -->		  
-	    <div class="blog-hero" style="background-image: url(<?php echo $header_bg['sizes']['product_header_background'];?>)">
+	    <div class="blog-hero" style="background-image: url(<?php bloginfo('template_url');?>/img/page-hero.jpg)">
 	      <div class="container text-center">
 		    <h1 class="hero-title">
-        <?php echo $term->name; ?>
+      <?php if ( have_posts() ) : ?>
+			<?php printf( pll__( '搜索结果: %s'), '<span>' . get_search_query() . '</span>' ); ?></h1>
+		<?php else : ?>
+			<?php pll_e( '无搜索结果'); ?></h1>
+		<?php endif; ?>
 		    </h1>
 			<div class="line center"></div>	
 		  </div>
@@ -38,16 +38,22 @@ get_header(); ?>
 
           <?php 
           while(have_posts()): the_post();
-          $img = get_field('product_bg');
           ?> 
 		      <div class="post">
 			    <div class="post-thumbnail">
+          <?php if( get_post_type($post->ID) == 'product' ): $img = get_field('product_bg');?>
+
 				  <img src="<?php echo $img['sizes']['product_header_background'];?>" alt="" />
+          <?php else:?>
+				  <img src="<?php the_post_thumbnail_url('product_header_background');?>" alt="" />
+          <?php endif; ?>
 				</div>
 				<div class="post-text">
 				  <div class="post-title">
                     <h2>
-                     <!-- <span class="date"><?php pll_e(get_the_date());?></span> -->
+                      <?php if( get_post_type($post->ID) == 'post' ): ?>
+                      <span class="date"><?php pll_e(get_the_date());?></span>
+                      <?php endif; ?>
                       <a href="<?php the_permalink(); ?>"><?php the_title();?></a>
                     </h2>				
 				  </div>
@@ -65,36 +71,6 @@ get_header(); ?>
 		    </div>
 			
 		    <div class="col-lg-3 col-md-3 col-sm-3">
-			
-			  <!-- start sidebar -->		
-        <aside class="sidebar">
-			  
-            <?php
-                $recent_post_args  = array (
-                    'post_type' => 'product', 
-                    'post_status'    => 'publish',
-                    'posts_per_page' => 5,
-                    'post__not_in'   => array($post->ID)
-                    );  
-
-                 $recent_post = new WP_Query( $recent_post_args );
-                if( $recent_post->have_posts() ):
-                ?>
-			        <div id="recent-posts" class="widget posts_holder">
-                  <h5><?php pll_e('最新产品');?></h5>
-                  <ul>
-                  <?php while( $recent_post->have_posts() ) : $recent_post->the_post(); ?>
-                    <li>
-                      <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                    </li>
-                   <?php endwhile; wp_reset_postdata(); ?> 
-                  </ul>
-                </div>
-            <?php endif;?>
-          <?php echo enchuang_get_product_sub_categories( $term->taxonomy, $term->term_id, $term->parent); ?>
-				
-			  </aside>
-			  <!-- end sidebar -->
 			  
 		    </div>		
 			

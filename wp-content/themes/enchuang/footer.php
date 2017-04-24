@@ -91,8 +91,8 @@ global $enchuang_options;
         <div class="modal-content">	
           <div class="modal-header">
 	        <div class="form-top-left ">
-              <h4 class="modal-title" id="myModalLabel">Contact us</h4>
-		      <p class="modal-subtitle">Fill in the form bellow to send us a message:</p>
+              <h4 class="modal-title" id="myModalLabel"><?php pll_e('联系我们');?></h4>
+		      <p class="modal-subtitle"><?php pll_e('请填写表单联系我们'); ?></p>
             </div>
             <div class="form-top-right">
               <i class="fa fa-envelope"></i>
@@ -103,28 +103,10 @@ global $enchuang_options;
             <div id="contacts">	  
               <div class="row">			
                 <!-- alignment -->
+                <?php //echo do_shortcode('[gravityform id="1" name="Contact us" title="false" description="false"]'); ?>		  
 	            <div class="col-lg-12 col-md-12 col-sm-12">
 	              <!-- form itself -->
-                  <form name="sentMessage" class="" id="contactForm" novalidate>
-		            <div class="control-group">
-                      <div class="controls">
-			            <input type="text" class="form-control" placeholder="Full Name" id="name" required data-validation-required-message="Please enter your name" />
-			            <p class="help-block"></p>
-		              </div>
-	                </div>			 
-                    <div class="control-group">
-                      <div class="controls">
-			            <input type="email" class="form-control" placeholder="Email" id="email" required data-validation-required-message="Please enter your email" />
-		              </div>
-	                </div>			  
-                    <div class="control-group">
-                      <div class="controls">
-		                <textarea rows="10" cols="100" class="form-control" placeholder="Message" id="message" required data-validation-required-message="Please enter your message" minlength="5" data-validation-minlength-message="Min 5 characters" maxlength="999" style="resize:none"></textarea>
-		              </div>
-                    </div>			   
-	                <div id="success"> </div> <!-- For success/fail messages -->		 
-	                <button type="submit" class="btn btn-primary pull-left">Send message</button><br>		
-                  </form>		  
+                  <?php echo do_shortcode('[contact-form-7 id="189" title="Contact form 1"]');?>		  
 	            </div>	
               </div>	  
             </div>	
