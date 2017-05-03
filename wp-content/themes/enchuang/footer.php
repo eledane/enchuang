@@ -23,30 +23,35 @@ global $enchuang_options;
 				<p class="text-widget"><?php echo $enchuang_options['footer_logo_desc']; ?></p>				
 		      </div>			  
 
-	          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-	            <h5 class="widget-title">友情链接</h5>	
-				<ul class="post-list">
-				  <li><a href="#">Ibiza amazing 5 star hotel</a></li>
-				  <li><a href="#">It's time to get discounts</a></li>
-				  <li><a href="#">It's a good hotel for you</a></li>				  
-				</ul>					
-		      </div>			  
+      <?php if( !empty( $enchuang_options['friendly_link_left']) ):?>
+                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                    <h5 class="widget-title"><?php pll_e('友情链接'); ?></h5>	
+              <ul class="post-list">
+              <?php foreach( $enchuang_options['friendly_link_left'] as $fl):?>
+                <li><a href="<?php echo $fl['url']; ?>" target="_blank"><?php echo $fl['title'];?></a></li>
+                <?php endforeach; ?>
+              </ul>					
+                </div>			  
+      <?php endif; ?>
+                  
 
-	        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-	            <h5 class="widget-title">友情链接</h5>	
-				<ul class="post-list">
-				  <li><a href="#">Ibiza amazing 5 star hotel</a></li>
-				  <li><a href="#">It's a good hotel for you</a></li>				  
-				  <li><a href="#">It's a good hotel for you</a></li>				  
-				</ul>					
-		      </div>  
-
+      <?php if( !empty( $enchuang_options['friendly_link_right']) ):?>
+                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                    <h5 class="widget-title"><?php pll_e('友情链接'); ?></h5>	
+              <ul class="post-list">
+              <?php foreach( $enchuang_options['friendly_link_right'] as $fr):?>
+                <li><a href="<?php echo $fr['url']; ?>" target="_blank"><?php echo $fr['title'];?></a></li>
+                <?php endforeach; ?>
+              </ul>					
+                </div>			  
+      <?php endif; ?>
+        
 	          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
 	            <h5 class="widget-title"><?php pll_e('联系我们');?></h5>
 			  <ul class="footer-contact">
 			    <li><i class="fa fa-map-marker"></i><span><?php pll_e('Address'); ?>: <?php echo $enchuang_options['address']; ?> </span></li>
 			    <li><i class="fa fa-phone"></i><span><?php pll_e('Phone');?>: <?php echo $enchuang_options['cellphone']; ?></span></li>	
-			    <li><i class="fa fa-envelope"></i><span>Email: <a href="mailto:<?php echo $enchuang_options['email']; ?>"><?php echo $enchuang_options['email']; ?></a></span></li>				
+			    <li><i class="fa fa-envelope"></i><span><?php pll_e('Email'); ?>: <a href="mailto:<?php echo $enchuang_options['email']; ?>"><?php echo $enchuang_options['email']; ?></a></span></li>				
 			  </ul>	
 								  
 		      </div>			  

@@ -236,10 +236,40 @@
     ) );
 // end of general section
 
+    Redux::setSection( $opt_name, array(
+        'title'      => pll__( '友情链接'),
+        'icon'         => 'el-icon-cogs',
+        'fields'     => array(
+             array(
+                'id'       => 'friendly_link_left',
+                'type'     => 'slides',
+                'title'    => pll__( '左侧友情链接' ),
+                  'placeholder' => array(
+                  'title'           => pll__('标题'),
+                  'description'     => pll__('描述'),
+                  'url'             => pll__('网址'),
+                 )
+
+            ),
+
+        array(
+                'id'       => 'friendly_link_right',
+                'type'     => 'slides',
+                'title'    => pll__( '右侧有情链接' ),
+                 'placeholder' => array(
+                  'title'           => pll__('标题'),
+                  'description'     => pll__('描述'),
+                  'url'             => pll__('网址'),
+                 )
+
+            )
 
 
 
+      
+        )
 
+    ));
 
 
 

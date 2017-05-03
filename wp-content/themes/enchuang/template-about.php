@@ -54,35 +54,59 @@ get_header(); ?>
 		    <div class="col-lg-6 col-md-6 col-sm-6" style="padding: 0;">
 		      <img src="<?php echo $left_img['url'];?>" alt="" />
 		    </div>
-		    <div class="col-lg-6 col-md-6 col-sm-6" style="padding: 60px;">
-			  <h2>Our Skills</h2>
+		    <div class="col-lg-6 col-md-6 col-sm-6" style="padding: 10px 40px;">
+			  <h2>恩创简介</h2>
 			  <div class="line"></div>
-			  <div style="height: 30px; clear: both;"></div>
-			  <div class="progress_block">								
 
-				<div class="progress_text">
-				  <p class="title">WordPress Development</p>
-				  <p class="number">60%</p>
-				</div>
-				<div class="progress"><div data-level="60"></div></div>									
-				<div class="progress_text">
-				  <p class="title">Web design</p>
-				  <p class="number">90%</p>
-				</div>
-				<div class="progress"><div data-level="90"></div></div>									
-				<div class="progress_text">
-				  <p class="title">Programming</p>
-				  <p class="number">50%</p>
-				</div>
-				<div class="progress"><div data-level="40"></div></div>									
-				<div class="progress_text">
-				  <p class="title">Photography</p>
-				  <p class="number">70%</p>
-				</div>
-				<div class="progress"><div data-level="70"></div></div>									
-		      </div>			  
+			   天津恩创科技有限公司坐落于天津市西青区的综合性科技企业，主要从事环保和新能源产品的研发、销售、技术和服务。<br>
+
+         公司秉承"专业、诚信、创新"的经营宗旨，凭借完善的服务网络，为市场用户提供专业的产品和贴心的服务。主营业务涵盖室内空气净化器、车载空气净化器、气体检测仪，气体报警器，PM2.5检测仪、水质检测仪器、新能源汽车充电设备等，其相关产品包括可燃气体、有毒气体、甲醛、一氧化碳、氧气、氮气、挥发性有机物（VOCs)等气体检测仪、粉尘检测仪、重金属检测仪、COD水质在线自动监测仪；新能源汽车充电桩、充电插枪设备等，业务范围涉及汽车厂、加油站、石油、化工、医药、能源、环保、电子、市政工程、水污染处理等多个板块。公司与国内外知名公司签署良好合作关系，引进先进技术，采用进口原件研制生产具有国内领先的设备，向用户提供更多的优质技术和最佳的解决方案。<br>
+
+         恩创科技始终秉承“用感恩的心回馈社会，为创造一个健康的生活环境而努力奋斗”为使命，以“塑造精品环保品牌 ”为愿景，本着以人为本、顾客至上的原则，竭诚为客户服务!<br>
+													
 		      </div>			  
 		  </div>
+
+<div class="row">
+		   <div class="col-lg-6 col-md-6 col-sm-6" style="padding: 0; display:none">
+		      <img src="<?php echo $left_img['url'];?>" alt="" />
+		    </div> 
+
+		    <div class="col-lg-6 col-md-6 col-sm-6" style="padding: 10px 40px;">
+			  <h2>企业文化</h2>
+			  <div class="line"></div>
+
+			   天津恩创科技有限公司坐落于天津市西青区的综合性科技企业，主要从事环保和新能源产品的研发、销售、技术和服务。<br>
+
+         公司秉承"专业、诚信、创新"的经营宗旨，凭借完善的服务网络，为市场用户提供专业的产品和贴心的服务。主营业务涵盖室内空气净化器、车载空气净化器、气体检测仪，气体报警器，PM2.5检测仪、水质检测仪器、新能源汽车充电设备等，其相关产品包括可燃气体、有毒气体、甲醛、一氧化碳、氧气、氮气、挥发性有机物（VOCs)等气体检测仪、粉尘检测仪、重金属检测仪、COD水质在线自动监测仪；新能源汽车充电桩、充电插枪设备等，业务范围涉及汽车厂、加油站、石油、化工、医药、能源、环保、电子、市政工程、水污染处理等多个板块。公司与国内外知名公司签署良好合作关系，引进先进技术，采用进口原件研制生产具有国内领先的设备，向用户提供更多的优质技术和最佳的解决方案。<br>
+
+         恩创科技始终秉承“用感恩的心回馈社会，为创造一个健康的生活环境而努力奋斗”为使命，以“塑造精品环保品牌 ”为愿景，本着以人为本、顾客至上的原则，竭诚为客户服务!<br>
+
+		      </div>			  
+
+      <div class="col-lg-6 col-md-6 col-sm-6" style="padding: 0;">
+		      <img src="<?php echo $left_img['url'];?>" alt="" />
+		    </div>
+		  </div>
+
+<div class="row">
+		    <div class="col-lg-6 col-md-6 col-sm-6" style="padding: 0;">
+		      <img src="<?php echo $left_img['url'];?>" alt="" />
+		    </div>
+		    <div class="col-lg-6 col-md-6 col-sm-6" style="padding: 10px 40px;">
+			  <h2>社会责任</h2>
+			  <div class="line"></div>
+
+			   天津恩创科技有限公司坐落于天津市西青区的综合性科技企业，主要从事环保和新能源产品的研发、销售、技术和服务。<br>
+
+         公司秉承"专业、诚信、创新"的经营宗旨，凭借完善的服务网络，为市场用户提供专业的产品和贴心的服务。主营业务涵盖室内空气净化器、车载空气净化器、气体检测仪，气体报警器，PM2.5检测仪、水质检测仪器、新能源汽车充电设备等，其相关产品包括可燃气体、有毒气体、甲醛、一氧化碳、氧气、氮气、挥发性有机物（VOCs)等气体检测仪、粉尘检测仪、重金属检测仪、COD水质在线自动监测仪；新能源汽车充电桩、充电插枪设备等，业务范围涉及汽车厂、加油站、石油、化工、医药、能源、环保、电子、市政工程、水污染处理等多个板块。公司与国内外知名公司签署良好合作关系，引进先进技术，采用进口原件研制生产具有国内领先的设备，向用户提供更多的优质技术和最佳的解决方案。<br>
+
+         恩创科技始终秉承“用感恩的心回馈社会，为创造一个健康的生活环境而努力奋斗”为使命，以“塑造精品环保品牌 ”为愿景，本着以人为本、顾客至上的原则，竭诚为客户服务!<br>
+
+		      </div>			  
+		  </div>
+
+
 		</div><!-- /.container-fluid -->	
 
     <?php

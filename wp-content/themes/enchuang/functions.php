@@ -29,12 +29,13 @@ if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/inc/enchuang-
  */
 function enchuang_scripts() {
     
+
+	    wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '' );
        // Theme stylesheet.
 	    wp_enqueue_style( 'general-style', get_stylesheet_uri() );
 
 	    // Load other stylesheet.
 	    wp_enqueue_style( 'enchuang-style', get_template_directory_uri() . '/css/style.css', array(), '' );
-	    wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '' );
  
     
 	    // Load the javascripts
