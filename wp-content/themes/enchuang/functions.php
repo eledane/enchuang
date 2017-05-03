@@ -604,6 +604,10 @@ function enchuang_get_product_sub_categories( $tax = 'product_category', $term_i
   return $lists;
 }
 
+//disable special plugin update
 
-
-
+add_filter('site_transient_update_plugins', 'enchuang_remove_update_notification');
+function enchuang_remove_update_notification($value) {
+      unset($value->response["wonderplugin-lightbox/wonderpluginlightbox.php"]);
+            return $value;
+} 
