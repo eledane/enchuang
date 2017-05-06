@@ -6,3 +6,11 @@ Version: 1.1
 Text Domain: enchuang 
 */
 
+@media only screen and (max-width:768px){
+
+.page-template-template-about-php .even > .col-sm-6 {display:block !important}
+.page-template-template-about-php .even > .last {display:none !important}
+
+}
+
+.menu .current-lang {display:none}

@@ -86,7 +86,8 @@ add_action( 'wp_enqueue_scripts', 'enchuang_scripts' );
  */
 function enchuang_new_image_sizes(){
 
-   if ( function_exists( 'add_image_size' ) ) { 
+  //add featured image
+  add_theme_support( 'post-thumbnails' );
 
 	add_image_size( 'header_background_image', 1600,  988, array( 'center', 'center' ) );
   //product image
@@ -96,8 +97,11 @@ function enchuang_new_image_sizes(){
 
 	add_image_size( 'home_news_image', 827,  453, array( 'center', 'center' ) );
 
-    }
+  //about-us repeater image
+	add_image_size( 'about_us_content_image', 1000, 500, array( 'center', 'center' ) );
+
  }
+
  add_action('after_setup_theme', 'enchuang_new_image_sizes');
  
 
@@ -447,9 +451,6 @@ class Enchuang_Header_Menu_Mobile extends Walker_Nav_Menu {
  }
  add_filter( 'get_search_form', 'enchuang_search_form' );
 
-
-//add featured image
-add_theme_support( 'post-thumbnails' );
 
 
   // limit search results on specific post types

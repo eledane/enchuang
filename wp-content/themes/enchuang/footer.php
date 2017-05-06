@@ -87,6 +87,16 @@ global $enchuang_options;
                       );
                 wp_nav_menu($header_mobile_menu_args);
                 ?>
+          <li class="active sub">
+                  <a href="#"><?php pll_e('人力资源');?></a>
+                         <ul>
+                            <li><a href="#" data-toggle="modal" data-target="#joinUs"><?php pll_e('加入我们'); ?></a></li>         
+                         </ul>
+            </li>
+
+            <li class="last"><a href="#" data-toggle="modal" data-target="#myModal"><?php pll_e('联系我们'); ?></a></li>
+
+ 
            </ul>
 	
 	  </nav><!-- /#nav -->	
@@ -120,6 +130,38 @@ global $enchuang_options;
       </div>  
     </div>	
     <!-- end modal -->		  
+
+<!--join us-->
+<div class="modal fade" id="joinUs" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">  
+        <div class="modal-content">	
+          <div class="modal-header">
+	        <div class="form-top-left ">
+              <h4 class="modal-title" id="myModalLabel"><?php pll_e('加入我们');?></h4>
+		      <p class="modal-subtitle"><?php pll_e('请填写表单加入我们'); ?></p>
+            </div>
+            <div class="form-top-right">
+              <i class="fa fa-envelope"></i>
+            </div>
+          </div>	  
+          <div class="modal-body">	  
+            <!-- contacts -->
+            <div id="contacts">	  
+              <div class="row">			
+                <!-- alignment -->
+                <?php //echo do_shortcode('[gravityform id="1" name="Contact us" title="false" description="false"]'); ?>		  
+	            <div class="col-lg-12 col-md-12 col-sm-12">
+	              <!-- form itself -->
+                  <?php echo do_shortcode('[contact-form-7 id="189" title="Contact form 1"]');?>		  
+	            </div>	
+              </div>	  
+            </div>	
+          </div>	  
+        </div>	
+      </div>  
+    </div>
+<!--join us-->
+
 	  <div class="overlay overlay-scale">
 	    <button type="button" class="overlay-close">Close</button>
 	    <div class="container">

@@ -65,7 +65,7 @@ get_header(); ?>
 		</div>
 		<!-- end service -->	
 
-		  <div class="container-fluid" style="background-color: #f7f7f7;">
+		  <div class="container-fluid" style="background-color: #f7f7f7;" id="downloads">
 		    <div class="row">
 		      <div class="col-lg-6 col-md-6 col-sm-6" style="padding: 0;">
 		        <img src="<?php echo $third_img['url']; ?>" alt="" />
