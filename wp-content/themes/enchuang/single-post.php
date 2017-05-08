@@ -39,8 +39,10 @@ get_header();
 			  <!-- start post -->
 		    <?php the_content();?>  
 			  <!-- end post -->
-              <?php previous_post_link(); ?> 
-              <?php next_post_link(); ?> 
+          <div class="news__detail-nav">
+              <?php previous_post_link('%link'); ?> 
+              <?php next_post_link('%link'); ?> 
+          </div>
 		    </div>
 		
           

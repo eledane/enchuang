@@ -35,8 +35,11 @@ function enchuang_scripts() {
 	    wp_enqueue_style( 'general-style', get_stylesheet_uri() );
 
 	    // Load other stylesheet.
+      if( get_locale() == 'zh_CN'){
+	    wp_enqueue_style( 'enchuang-cn-style', get_template_directory_uri() . '/css/style-cn.css', array(), '' );
+      }else{
 	    wp_enqueue_style( 'enchuang-style', get_template_directory_uri() . '/css/style.css', array(), '' );
- 
+      }
     
 	    // Load the javascripts
       wp_deregister_script('jquery');
@@ -466,6 +469,17 @@ class Enchuang_Header_Menu_Mobile extends Walker_Nav_Menu {
 add_filter('pre_get_posts','enchuang_search_limit_post_type');
 
 
+// customize search results number on search result page
+
+function enchuang_set_search_number_per_page($queryVars) {
+  if ( !empty($_REQUEST['s']) ){
+  $queryVars['posts_per_page'] = 5;
+
+  }
+  return $queryVars;
+ }
+
+add_filter('request', 'enchuang_set_search_number_per_page');
 
 
 //get product category
@@ -612,3 +626,19 @@ function enchuang_remove_update_notification($value) {
       unset($value->response["wonderplugin-lightbox/wonderpluginlightbox.php"]);
             return $value;
 } 
+
+
+  // add class to prev and next post link                                             
+add_filter('next_post_link', 'next_post_link_attributes');                          
+add_filter('previous_post_link', 'prev_post_link_attributes');                      
+
+function prev_post_link_attributes($output) {                                       
+  $code = 'class="prev"';                                                     
+  return str_replace('<a href=', '<a '.$code.' href=', $output);                    
+}                                                                                   
+
+function next_post_link_attributes($output) {                                       
+  $code = 'class="next"';                                                     
+  return str_replace('<a href=', '<a '.$code.' href=', $output);                    
+}                                                                                   
+

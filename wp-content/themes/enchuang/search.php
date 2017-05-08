@@ -66,7 +66,19 @@ get_header(); ?>
 			    </div>
 		      </div>			
           <?php endwhile;?>
-		      
+            
+           <?php
+           // Previous/next page navigation.
+           the_posts_pagination( array(
+           'screen_reader_text' => ' ',
+           'prev_text'          => '',
+           'mid_size'           => 2,
+           'next_text'          => '',
+           //'show_all'    => true,
+           ) );
+           
+          ?>
+
 			  <!-- end post -->
 		    </div>
 			
