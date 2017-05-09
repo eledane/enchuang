@@ -19,34 +19,29 @@ class acf_pro {
 	
 	function __construct() {
 		
+		// constants
+		acf()->define( 'ACF_PRO', true );
+		
+		
 		// update setting
 		acf_update_setting( 'pro', true );
 		acf_update_setting( 'name', __('Advanced Custom Fields PRO', 'acf') );
 		
 
-		// api
-		acf_include('pro/api/api-pro.php');
+		// includes
 		acf_include('pro/api/api-options-page.php');
-		
-		
-		// updates
 		acf_include('pro/core/updates.php');
-			
-			
-		// admin
+		
 		if( is_admin() ) {
 			
-			// options page
 			acf_include('pro/admin/options-page.php');
-			
-			// settings
 			acf_include('pro/admin/settings-updates.php');
 			
 		}
 		
 		
 		// actions
-		add_action('init',										array($this, 'register_assets'));
+		add_action('acf/init',									array($this, 'register_assets'));
 		add_action('acf/include_field_types',					array($this, 'include_field_types'), 5);
 		add_action('acf/input/admin_enqueue_scripts',			array($this, 'input_admin_enqueue_scripts'));
 		add_action('acf/field_group/admin_enqueue_scripts',		array($this, 'field_group_admin_enqueue_scripts'));

@@ -58,6 +58,26 @@ Text Domain: enchuang
   margin: 0 7px;
  }
 
+#wpcf7-f306-p303-o1 .form-control {
+  background-color: #fff;
+  background-image: none;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  color: #818181;
+  display: block;
+  font-size: 13px;
+  height: 50px;
+  line-height: 17px;
+  padding: 15px 12px;
+  transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+  width: 100%;
+  margin: 0 0 20px !important;
+ }
+
+div.wpcf7-mail-sent-ok{
+border:none;  
+}
 
 @media (max-width: 480px) {
 

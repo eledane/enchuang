@@ -93,14 +93,13 @@ global $enchuang_options;
                             <li><a href="#" data-toggle="modal" data-target="#joinUs"><?php pll_e('加入我们'); ?></a></li>         
                          </ul>
             </li>
-
-            <li class="last"><a href="#" data-toggle="modal" data-target="#myModal"><?php pll_e('联系我们'); ?></a></li>
-
  
            </ul>
 	
 	  </nav><!-- /#nav -->	
     <!-- start modal -->
+    <?php /*
+<li class="last"><a href="#" data-toggle="modal" data-target="#myModal"><?php pll_e('联系我们'); ?></a></li>
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">  
         <div class="modal-content">	
@@ -128,7 +127,7 @@ global $enchuang_options;
           </div>	  
         </div>	
       </div>  
-    </div>	
+    </div>	*/ ?>
     <!-- end modal -->		  
 
 <!--join us-->

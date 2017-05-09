@@ -54,7 +54,7 @@
                          </ul>
             </li>
 
-            <li class="last"><a href="#" data-toggle="modal" data-target="#myModal"><?php pll_e('联系我们'); ?></a></li>
+    <!--        <li class="last"><a href="#" data-toggle="modal" data-target="#myModal"><?php pll_e('联系我们'); ?></a></li> -->
           <?php pll_the_languages();?>
            </ul>
 				</nav>
