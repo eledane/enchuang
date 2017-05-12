@@ -58,7 +58,7 @@ Text Domain: enchuang
   margin: 0 7px;
  }
 
-#wpcf7-f306-p303-o1 .form-control {
+.wpcf7-form .form-control{
   background-color: #fff;
   background-image: none;
   border: 0;
@@ -75,9 +75,30 @@ Text Domain: enchuang
   margin: 0 0 20px !important;
  }
 
+
+
+
 div.wpcf7-mail-sent-ok{
 border:none;  
 }
+
+.baidu-map-container {
+    
+   max-width: 100% !important;
+}
+
+.marker-overlay{ height:65px;}
+
+.page-template-template-contact-php aside .widget.posts_holder li:hover{
+  
+  color: #818181;
+  }
+
+#mm-p1-0 .current-lang{display:none} 
+
+.header{
+     background: #949392 !important;
+ }
 
 @media (max-width: 480px) {
 
@@ -85,5 +106,16 @@ border:none;
   margin-bottom: 20px;
   padding-bottom: 20px;
 }
+
+.baidu-map{
+ width: 100% !important;
+ height: 246px !important; 
+ }
+
+.contact-us-aside{
+  
+     padding-top: 450px;
+     padding-left: 16px;
+  }
 
 }

@@ -56,38 +56,55 @@ get_header(); ?>
 			  <!-- start comments_form -->			  
         <div class="comments_form">
 				<div class="m30"></div>
-			<?php echo do_shortcode('[contact-form-7 id="306" title="Contact us page"]'); ?>	
+			<?php 
+      if( get_locale() == 'en_US'){
+      echo do_shortcode('[contact-form-7 id="348" title="Contact us EN"]');
+      }else{
+      echo do_shortcode('[contact-form-7 id="306" title="Contact us page"]');
+       }
+      ?>	
               </div>
               <!-- end comments_Form -->					  
 			
 		    </div>
-	<?php /*		
+
 		    <div class="col-lg-3 col-md-3 col-sm-3">
 			
 			  <!-- start sidebar -->		
-		      <aside class="sidebar">
+		      <aside class="sidebar contact-us-aside">
 			  
 			    <div id="recent-posts" class="widget posts_holder">
-                  <h5>Recent Posts</h5>
+                  <h5><?php pll_e('联系我们');?>:</h5>
                   <ul>
+                  <?php if( !empty( get_field('contact_us_office')) ):?>
                     <li>
-                      <a href="#">Tation ullamcorper suscipit </a>
+                      <?php pll_e('办公地址');?>: <?php echo  strip_tags(get_field('contact_us_office'));?>
                     </li>
+                    <?php endif;?>
+                    <?php if( !empty( get_field('contact_us_person')) ):?>
                     <li>
-                      <a href="#">Ut wisi enim ad minim veniam</a>
+                      <?php pll_e('联系人'); ?>: <?php the_field('contact_us_person'); ?>
                     </li>
+                    <?php endif; ?>
+                    <?php if( !empty(get_field('contact_us_tel')) ): ?>
                     <li>
-                      <a href="#">Lobortis nisl ut aliquip ex ea</a>
+                      <?php pll_e('电话'); ?>: <?php the_field('contact_us_tel');?>
                     </li>
+                    <?php endif; ?>
+                    <?php if( !empty( get_field('contact_us_qq')) ):?>
                     <li>
-                      <a href="#">Duis autem vel eum iriure</a>
+                      <?php pll_e('QQ'); ?>: <?php the_field('contact_us_qq'); ?>
                     </li>
+                    <?php endif; ?>
+                    <?php if( !empty(get_field('contact_us_wechat')) ):?>
                     <li>
-                      <a href="#">Dolor in hendrerit in vulputate</a>
+                      <?php pll_e('微信'); ?>: <?php the_field('contact_us_wechat'); ?>
                     </li>
+                    <?php endif; ?>
                   </ul>
                 </div>
 
+	<?php /*		
                 <div id="categories" class="widget posts_holder">
                   <h5>Categories</h5>
                   <ul>
@@ -109,32 +126,12 @@ get_header(); ?>
                   </ul>
                 </div>
 
-                <div id="tag_cloud" class="widget posts_holder">
-                  <h5>Tags</h5>
-                  <div class="tagcloud">
-                    <a href="#">Bootstrap</a>
-                    <a href="#">Art</a>
-                    <a href="#">People</a>
-                    <a href="#">Website</a>
-                    <a href="#">Culture</a>
-                    <a href="#">Business</a>					
-                    <a href="#">Nature</a>
-                    <a href="#">Science</a>
-                    <a href="#">Photography</a>
-                    <a href="#">Gadgets</a>
-                    <a href="#">Lifestyle</a>
-                    <a href="#">Events</a>
-                    <a href="#">Cinema</a>
-                    <a href="#">Music</a>
-                  </div>
-                </div>
+        */ ?>
 				
 			  </aside>
 			  <!-- end sidebar -->
 			  
 		    </div>		
-
-        */ ?>
 			
 		  </div>
 		  

@@ -87,13 +87,7 @@ global $enchuang_options;
                       );
                 wp_nav_menu($header_mobile_menu_args);
                 ?>
-          <li class="active sub">
-                  <a href="#"><?php pll_e('人力资源');?></a>
-                         <ul>
-                            <li><a href="#" data-toggle="modal" data-target="#joinUs"><?php pll_e('加入我们'); ?></a></li>         
-                         </ul>
-            </li>
- 
+          <?php pll_the_languages();?>
            </ul>
 	
 	  </nav><!-- /#nav -->	
@@ -127,7 +121,7 @@ global $enchuang_options;
           </div>	  
         </div>	
       </div>  
-    </div>	*/ ?>
+    </div>
     <!-- end modal -->		  
 
 <!--join us-->
@@ -158,7 +152,7 @@ global $enchuang_options;
           </div>	  
         </div>	
       </div>  
-    </div>
+    </div> */?>
 <!--join us-->
 
 	  <div class="overlay overlay-scale">

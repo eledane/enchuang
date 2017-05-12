@@ -47,13 +47,6 @@
                 wp_nav_menu($header_menu_args);
                 ?>
 
-          <li class="active sub">
-                  <a href="#"><?php pll_e('人力资源');?></a>
-                         <ul>
-                            <li><a href="#" data-toggle="modal" data-target="#joinUs"><?php pll_e('加入我们'); ?></a></li>         
-                         </ul>
-            </li>
-
     <!--        <li class="last"><a href="#" data-toggle="modal" data-target="#myModal"><?php pll_e('联系我们'); ?></a></li> -->
           <?php pll_the_languages();?>
            </ul>
