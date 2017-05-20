@@ -97,8 +97,13 @@ border:none;
 #mm-p1-0 .current-lang{display:none} 
 
 .header{
-     background: #949392 !important;
+     background: rgba(0, 0, 0, 0.2) !important;
  }
+
+.menu > ul > li > a{
+ font-size: 15px !important; 
+  }
+
 
 @media (max-width: 480px) {
 
