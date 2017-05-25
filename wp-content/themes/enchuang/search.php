@@ -11,13 +11,13 @@
 * @subpackage Bright 
 * @since Bright 1.0
 */
-
+global $enchuang_options;
 get_header(); ?>
 	
  	  <!-- start content -->	
 	  <div class="content">	  
 	    <!-- start hero -->		  
-	    <div class="blog-hero" style="background-image: url(<?php bloginfo('template_url');?>/img/page-hero.jpg)">
+	    <div class="blog-hero" style="background-image: url(<?php echo $enchuang_options['search_page_background']['url'];?>)">
 	      <div class="container text-center">
 		    <h1 class="hero-title">
       <?php if ( have_posts() ) : ?>

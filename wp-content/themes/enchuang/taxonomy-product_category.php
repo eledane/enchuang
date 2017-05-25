@@ -12,16 +12,18 @@
 * @since Bright 1.0
 */
 //$terms = get_query_var();
+global $enchuang_options;
+
 $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
 
- $header_bg = get_field('product_bg', $post->ID);
-
+$header_bg = $term->slug . '-bg';
+ //$header_bg = get_field('product_bg', $post->ID);
 get_header(); ?>
 	
  	  <!-- start content -->	
 	  <div class="content">	  
 	    <!-- start hero -->		  
-	    <div class="blog-hero" style="background-image: url(<?php echo $header_bg['sizes']['product_header_background'];?>)">
+	    <div class="blog-hero" style="background-image: url(<?php echo $enchuang_options[$header_bg]['url'];?>)">
 	      <div class="container text-center">
 		    <h1 class="hero-title">
         <?php echo $term->name; ?>

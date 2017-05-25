@@ -11,13 +11,13 @@
 * @subpackage Bright 
 * @since Bright 1.0
 */
-
+global $enchuang_options;
 get_header(); ?>
 	
  	  <!-- start content -->	
 	  <div class="content">	  
 	    <!-- start hero -->		  
-	    <div class="blog-hero" style="background-image: url(<?php the_post_thumbnail_url('product_header_background');?>)">
+	    <div class="blog-hero" style="background-image: url(<?php echo $enchuang_options['news_background']['url'];?>)">
 	      <div class="container text-center">
 		    <h1 class="hero-title">
         <?php the_title();?>

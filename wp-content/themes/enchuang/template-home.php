@@ -76,7 +76,7 @@ get_header(); ?>
             <div class="container-fluid">
               <div class="row">
 			    <?php foreach( $products as $product):?> 
-			    <div class="col-lg-3 col-md-3 col-sm-3 item grid cs-style-3" style="padding: 0;"><figure><img src="<?php echo get_the_post_thumbnail_url($product, 'product_header_background');?>" alt="img02"><figcaption><h3><a href="<?php echo get_permalink($product); ?>"><?php echo get_the_title( $product ); ?></a></h3></figcaption></figure></div>
+			    <div class="col-lg-3 col-md-3 col-sm-3 item grid cs-style-3" style="padding: 0;"><figure><img src="<?php echo get_the_post_thumbnail_url($product, 'product_cover');?>" alt="img02"><figcaption><h3><a href="<?php echo get_permalink($product); ?>"><?php echo get_the_title( $product ); ?></a></h3></figcaption></figure></div>
 			   <?php endforeach; ?> 
               </div>				
             </div>				

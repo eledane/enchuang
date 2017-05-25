@@ -273,6 +273,85 @@
 
 
 
+// start  logo  section
+    Redux::setSection( $opt_name, array(
+        'title'      => pll__( '产品分类及资讯页面背景' ),
+        'icon'         => 'el el-picture',
+        'fields'     => array(
+                array(
+                'id'       => 'search_page_background',
+                'type'     => 'media',
+                'title'    => pll__( '搜索页面' ),
+                'url'      => true,
+                 'description'      => '推荐图片尺寸：1920*958px ',
+                ),
+ 
+
+            array(
+                'id'       => 'news_background',
+                'type'     => 'media',
+                'title'    => pll__( '资讯页面' ),
+                'url'      => true,
+                 'description'      => '推荐图片尺寸：1920*958px ',
+                ),
+             array(
+                'id'       => 'air-purification-equipment-bg',
+                'type'     => 'media',
+                'title'    => pll__( '空气净化设备页面' ),
+                'url'      => true,
+                 'description'      => '推荐图片尺寸：1920*958px ',
+                ),
+             array(
+                'id'       => 'car-air-purifier-bg',
+                'type'     => 'media',
+                'title'    => pll__( '车载空气净化器页面' ),
+                'url'      => true,
+                 'description'      => '推荐图片尺寸：1920*958px ',
+                ),
+             array(
+                'id'       => 'household-air-purifiers-bg',
+                'type'     => 'media',
+                'title'    => pll__( '家用空气净化器页面' ),
+                'url'      => true,
+                 'description'      => '推荐图片尺寸：1920*958px ',
+                ),
+             array(
+                'id'       => 'commercial-air-purifier-bg',
+                'type'     => 'media',
+                'title'    => pll__( '商用空气净化器页面呢' ),
+                'url'      => true,
+                 'description'      => '推荐图片尺寸：1920*958px ',
+                ),
+             array(
+                'id'       => 'environmental-protection-bg',
+                'type'     => 'media',
+                'title'    => pll__( '环保监测设备页面' ),
+                'url'      => true,
+                 'description'      => '推荐图片尺寸：1920*958px ',
+                ),
+             array(
+                'id'       => 'water-quality-detector-bg',
+                'type'     => 'media',
+                'title'    => pll__( '水质检测仪页面' ),
+                'url'      => true,
+                 'description'      => '推荐图片尺寸：1920*958px ',
+                ),
+             array(
+                'id'       => 'gas-detector-bg',
+                'type'     => 'media',
+                'title'    => pll__( '气体检测仪页面' ),
+                'url'      => true,
+                 'description'      => '推荐图片尺寸：1920*958px ',
+                ),
+             array(
+                'id'       => 'dust-monitor-bg',
+                'type'     => 'media',
+                'title'    => pll__( '粉尘监测仪页面' ),
+                'url'      => true,
+                 'description'      => '推荐图片尺寸：1920*958px ',
+                )
+        )
+    ) );
 // start  social  section
 /*     Redux::setSection( $opt_name, array(
          'title'      => __( 'Social', 'enchuang' ),

@@ -75,7 +75,7 @@ get_header(); ?>
                         <li class="portfolio-item <?php echo $item_slug; ?>">
                             <div class="item-main">
                                 <div class="portfolio-image">
-                                  <div class="item grid cs-style-3" style="padding: 0;"><figure><img src="<?php the_post_thumbnail_url(get_the_ID(), 'product_cover');?>" alt="img04"><figcaption><h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3></figcaption></figure></div>
+                                  <div class="item grid cs-style-3" style="padding: 0;"><figure><img src="<?php the_post_thumbnail_url('product_cover');?>" alt="img04"><figcaption><h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3></figcaption></figure></div>
                                 </div>
                             </div>
                         </li>
