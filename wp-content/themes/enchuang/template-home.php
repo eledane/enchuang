@@ -39,8 +39,12 @@ get_header(); ?>
 		        <p class="h-subtitle">
             <?php echo $slider['home_slider_slogan']; ?>
 		        </p>	
-		        <a class="btn btn-primary" href="<?php echo $slider['home_slider_link']; ?>"><?php pll_e('了解更多');?></a>
-		        <a class="btn btn-transparent" href="#" data-toggle="modal" data-target="#myModal"><?php pll_e('联系我们'); ?></a>
+            <?php if($slider['home_slider_button_left']):?>
+		        <a class="btn btn-primary" href="<?php echo $slider['home_slider_link']; ?>"><?php echo $slider['home_slider_button_left'];?></a>
+            <?php endif; ?>
+            <?php if( $slider['home_slider_button_right'] ):?>
+		        <a class="btn btn-transparent" href="<?php echo $slider['home_slider_link_right'];?>"><?php echo $slider['home_slider_button_right'] ?></a>
+            <?php endif; ?>
 		      </div>			
 		    </div>
 		  </div>		  
@@ -57,7 +61,7 @@ get_header(); ?>
 				  <p class="subtitle" style="margin-bottom: 30px;"><?php echo strip_tags(get_field('home_about_desc'));?></p>
           <?php the_field('home_about_content'); ?>
 				  <div style="height: 30px; clear: both;"></div>
-				  <a class="btn btn-default" style="color: #fff;" href="#"><?php pll_e('了解更多');?></a> 
+				  <a class="btn btn-default" style="color: #fff;" href="<?php echo get_permalink(303);?>"><?php pll_e('了解更多');?></a> 
 		      </div>
 		      <div class="col-lg-6 col-md-6 col-sm-6">
 		        <img class="mockup" src="<?php echo $about_us_img['url']; ?>" style="width: 350px;" alt="" />
@@ -76,7 +80,16 @@ get_header(); ?>
             <div class="container-fluid">
               <div class="row">
 			    <?php foreach( $products as $product):?> 
-			    <div class="col-lg-3 col-md-3 col-sm-3 item grid cs-style-3" style="padding: 0;"><figure><img src="<?php echo get_the_post_thumbnail_url($product, 'product_cover');?>" alt="img02"><figcaption><h3><a href="<?php echo get_permalink($product); ?>"><?php echo get_the_title( $product ); ?></a></h3></figcaption></figure></div>
+			    <div class="col-lg-3 col-md-3 col-sm-3 item grid cs-style-3" style="padding: 0;">
+            <figure>
+              <img src="<?php echo get_the_post_thumbnail_url($product, 'product_cover');?>" alt="img02">
+                  <figcaption>
+                    <h3>
+                      <a href="<?php echo get_permalink($product); ?>"><?php echo get_the_title( $product ); ?></a>
+                    </h3>
+                  </figcaption>
+            </figure>
+          </div>
 			   <?php endforeach; ?> 
               </div>				
             </div>				

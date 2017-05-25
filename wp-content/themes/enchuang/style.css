@@ -124,3 +124,11 @@ border:none;
   }
 
 }
+
+
+@media (min-width: 1200px) and (max-width:1440px){
+.owl-carousel .owl-wrapper-outer{
+  height: 630px;
+  }
+
+}

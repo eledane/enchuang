@@ -44,7 +44,7 @@ get_header(); ?>
           ?> 
 		      <div class="post">
 			    <div class="post-thumbnail">
-				  <img src="<?php echo $img['sizes']['product_header_background'];?>" alt="" />
+				 <a href="<?php the_permalink();?>"><img src="<?php echo $img['sizes']['product_header_background'];?>" alt="" /></a>
 				</div>
 				<div class="post-text">
 				  <div class="post-title">
@@ -88,7 +88,14 @@ get_header(); ?>
                     'post_type' => 'product', 
                     'post_status'    => 'publish',
                     'posts_per_page' => 5,
-                    'post__not_in'   => array($post->ID)
+                    'post__not_in'   => array($post->ID),
+                    'tax_query' => array(
+                         array(
+                            'taxonomy' => 'product_category',
+                            'field' => 'term_id',
+                            'terms' => array($term->term_id),
+                        ),
+                      ),
                     );  
 
                  $recent_post = new WP_Query( $recent_post_args );
