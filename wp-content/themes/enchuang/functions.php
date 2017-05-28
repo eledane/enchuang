@@ -642,3 +642,38 @@ function next_post_link_attributes($output) {
   return str_replace('<a href=', '<a '.$code.' href=', $output);                    
 }                                                                                   
 
+ 
+ //function to output one taxtonomy 
+ function enchuang_output_product_lists( $term_id, $term_name ){                           
+            $args = array(
+                'post_type' => 'product',
+                'post_status' => 'publish',                                                             
+                'posts_per_page'  => -1,                                                               
+                'tax_query' =>array( 
+                     array(
+                    'taxonomy' => 'product_category',    
+                    'field'    => 'term_id',
+                    'terms'    => array($term_id )
+                      )
+                  )
+            );                                                                         
+            $query = new WP_Query( $args );                                                  
+              if( $query->have_posts() ){                                                      
+                $p_item = '<div class="post">
+			            <div id="tag_cloud" class="widget posts_holder post-text">
+                  <h5><a href="' . get_term_link($term_id) . '">' . $term_name . '</a></h5>
+                  <div class="tagcloud">'."\n";                                                                    
+                    while( $query->have_posts()){                                                      
+                             $query->the_post();                                                            
+                            $p_item .= '<a href="' . get_permalink() . '">' . trim(get_the_title())  . '</a>';
+
+                 }
+               
+                $p_item .= '</div></div></div>';
+
+                  wp_reset_postdata();
+                }
+
+            return $p_item;
+
+ }

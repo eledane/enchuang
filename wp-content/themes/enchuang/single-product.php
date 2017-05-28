@@ -7,19 +7,28 @@
 * @subpackage Bright 
 * @since Bright 1.0
 */
-
+global $enchuang_options;
 get_header();
 ?>
 
  <?php 
  while(have_posts()): the_post();
  $header_bg = get_field('product_bg');
- 
+ $terms = wp_get_post_terms(get_the_ID(), 'product_category'); 
+
+ foreach( $terms as $term ){
+   
+   if( !$term->parent ){
+     $t_slug = $term->slug;
+     }
+   }
+
+   $header_bg_url = $t_slug . '-bg';
  ?> 
     <!-- start content -->	
 	  <div class="content">	  
 	    <!-- start hero -->		  
-	    <div class="blog-hero" style="background-image: url(<?php echo $header_bg['sizes']['product_header_background']; ?>)">
+	    <div class="blog-hero" style="background-image: url(<?php echo $enchuang_options[$header_bg_url]['url']; ?>)">
 	      <div class="container text-center">
 		    <h1 class="hero-title">
 		     <?php the_title();?> 
