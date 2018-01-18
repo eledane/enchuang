@@ -13,7 +13,8 @@
 * @subpackage Bright 
 * @since Bright 1.0
 */
-
+//wp_redirect('http://www.google.com');
+//exit;
 get_header(); ?>
 	
    <?php 
@@ -180,6 +181,7 @@ get_header(); ?>
 		<!-- end testimonials -->	
 		<!-- start clients -->
     <?php
+    /**
     global $enchuang_options;
      if( !empty($enchuang_options['partners'] )):
     ?>
@@ -192,7 +194,7 @@ get_header(); ?>
 			</ul>
 		  </div>
 		</div>
-<?php endif;?>
+<?php endif; **/?>
 
 		<!-- end clients -->
 	<!-- start intro -->
